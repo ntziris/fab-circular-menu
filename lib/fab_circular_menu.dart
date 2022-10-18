@@ -136,16 +136,14 @@ class FabCircularMenuState extends State<FabCircularMenu>
         alignment: widget.alignment,
         children: <Widget>[
           // Ring
-          Transform(
-            transform: Matrix4.translationValues(
-              _translationX,
-              _translationY,
-              0.0,
-            )..scale(_scaleAnimation.value),
-            alignment: FractionalOffset.center,
-            child: OverflowBox(
-              maxWidth: _ringDiameter,
-              maxHeight: _ringDiameter,
+          OverflowBox(
+            maxWidth: _ringDiameter,
+            maxHeight: _ringDiameter,
+            child: Transform(
+              transform:
+                  Matrix4.translationValues(_translationX, _translationY, 0.0)
+                    ..scale(_scaleAnimation.value),
+              alignment: FractionalOffset.center,
               child: Container(
                 width: _ringDiameter,
                 height: _ringDiameter,
